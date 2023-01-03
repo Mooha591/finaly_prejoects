@@ -20,7 +20,8 @@ const Navbar = ({ auth }) => {
   const SessionTimeOut = () => {
     setTime(time + 1);
     console.log(time);
-    if (time === 5) {
+    if (time === 3) {
+      // 3 minutes
       localStorage.clear();
       window.location.reload();
     }
@@ -60,7 +61,7 @@ const Navbar = ({ auth }) => {
           <h3 className="logo">Logo</h3>
         </Link>
         <ul
-          className={isMobile ? "nav-links-mobile active" : "nav-links"} // show-nav
+          className={isMobile ? "nav-links-mobile active" : "nav-links"} // Toggle Mobile Menu
           onClick={() => setIsmobile(false)}
           on
         >
