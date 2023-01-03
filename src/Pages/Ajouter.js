@@ -170,15 +170,17 @@ const Ajouter = ({ auth }) => {
         </form>
 
         {/* <div className="HeaderTask">Tache</div> */}
-
         <table className="tables">
-          <tr>
-            <th scope="col">Tâche</th>
-            <th scope="col">modifier</th>
-            <th scope="col">supprimer</th>
-          </tr>
+          {/* //:si on a pas de tâche on cache notre table sinon on l'affiche */}
+          {todos.length > 0 && ( // si on a plus de 0 tâche on affiche notre table
+            <tr>
+              <th scope="col">Tâche</th>
+              <th scope="col">modifier</th>
+              <th scope="col">supprimer</th>
+            </tr>
+          )}
           {todos.map((task) => {
-            const { task_id, title } = task;
+            const { task_id, title } = task; // destructuring
             return (
               <tr key={task_id} className="items">
                 <td>{title}</td>
@@ -204,26 +206,21 @@ const Ajouter = ({ auth }) => {
             );
           })}
         </table>
-        {/* <button className="deleteAllTask" onClick={() => AlldeleteUsers()}>
-          supprimer toutes les tâches
-        </button> */}
-      </article>
-      <button
-        className="deleteAll"
-        style={
-          // si on à plus d'un user on affiche le bouton sinon on le cache
-          todos.length > 0 ? { display: "block" } : { display: "none" }
-        }
-        onClick={() => AlldeleteUsers()}
-      >
-        Supprimer toutes les tâches
-      </button>
+        {todos.length > 0 && (
+          <button
+            className="deleteAll"
+            onClick={() => AlldeleteUsers(auth.user_id)}
+          >
+            supprimer toutes les tâches
+          </button>
+        )}
 
-      {/* <div className="form-group">
-              <button type="submit" className="addTask" onClick={Dark}>
-                {DarkMode ? "Mode clair" : "Mode sombre"}
-              </button>
-            </div>  */}
+        {todos.length < 1 && (
+          <div className="noTask">
+            <h3>Vous n'avez pas de tâche</h3>
+          </div>
+        )}
+      </article>
     </>
   );
 };
