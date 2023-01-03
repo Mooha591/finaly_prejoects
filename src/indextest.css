@@ -624,7 +624,7 @@ input[type=email] {
   
 }
 
-.buttonEdit{
+/* .buttonEdit{
   background-color: #f4f4f4;
   display: flex;
   justify-content: space-between;
@@ -634,25 +634,15 @@ input[type=email] {
   border-radius: 10px;
   position: relative;
   cursor: pointer;
-}
+} */
 
 
 
-.buttonDelete{
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 10px;
-  position: relative;
-  cursor: pointer;
-}
+
 
 
 .buttonDelete {
-  text-transform: capitalize;
+  text-align: right;
   font-size: 1rem;
   color: var(--clr-red-dark);
   padding: 10px 20px;
@@ -660,16 +650,16 @@ input[type=email] {
   border-radius: 5px;
   cursor: pointer;
   margin: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
   transition: var(--transition);
 
 
 }
 
-.buttonEdit {
-  text-transform: capitalize;
+
+.buttonEdit{
   font-size: 1rem;
   color: var(--clr-green-dark);
   padding: 10px 20px;
@@ -677,11 +667,10 @@ input[type=email] {
   border-radius: 5px;
   cursor: pointer;
   margin: 5px;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   transition: var(--transition);
-
 }
 
 
@@ -885,6 +874,9 @@ td, th {
   letter-spacing: 1px;
 
 
+}
+
+td , .buttonDelete , .buttonEdit {
 }
 
 /* .items:hover {
